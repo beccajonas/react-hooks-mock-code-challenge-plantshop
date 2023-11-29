@@ -8,7 +8,6 @@ function PlantList({ plants, handleDeletePlant, setFormData }) {
       plants={plants} 
       key={plants.id} 
       handleDeletePlant={handleDeletePlant} 
-      setFormData = {setFormData} 
     />)
 
   return (

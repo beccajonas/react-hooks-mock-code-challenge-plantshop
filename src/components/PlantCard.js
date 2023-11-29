@@ -15,11 +15,11 @@ function PlantCard({ plants, handleDeletePlant, setFormData}) {
 
   function handleEditClick() {
     const plantToEdit = {
-      id: plants.id,
       name: plants.name,
       image: plants.image,
       price: plants.price
     }
+
     setFormData(plantToEdit);
   }
 
@@ -35,7 +35,7 @@ function PlantCard({ plants, handleDeletePlant, setFormData}) {
         <button onClick={handleClick}>Out of Stock</button>
       )}
       <button onClick={handleDeleteClick}>Delete ❌</button>
-      <button onClick={handleEditClick}>Edit ✏️</button>
+      <button onClick={handleEditClick}></button>
     </li>
   );
 }

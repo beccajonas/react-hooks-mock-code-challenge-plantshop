@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
-function NewPlantForm({ handleNewPlant, setName, setImage, setPrice, name, image, price }) {
+function NewPlantForm({ handleNewPlant }) {
+
+  const [name, setName] = useState('')
+  const [image, setImage] = useState('')
+  const [price, setPrice] = useState('')
 
   function handleNameInput(e) {
     setName(e.target.value)
@@ -16,7 +20,12 @@ function NewPlantForm({ handleNewPlant, setName, setImage, setPrice, name, image
 
   function handleSubmit(e) {
     e.preventDefault()
-    handleNewPlant()
+    const newPlant = {
+      name,
+      image,
+      price
+    }
+    handleNewPlant(newPlant)
   }
 
 
@@ -29,15 +38,13 @@ function NewPlantForm({ handleNewPlant, setName, setImage, setPrice, name, image
           type="text" 
           name="name" 
           placeholder="Plant name" 
-          onChange={handleNameInput}
-          value={name}
+          onChange={handleNameInput} 
         />
         <input 
           type="text" 
           name="image" 
           placeholder="Image URL" 
-          onChange={handleImageInput} 
-          value={image}
+        onChange={handleImageInput} 
         />
         <input 
           type="number" 
@@ -45,7 +52,6 @@ function NewPlantForm({ handleNewPlant, setName, setImage, setPrice, name, image
           step="0.01" 
           placeholder="Price" 
           onChange={handlePriceInput} 
-          value={price}
         />
         <button type="submit">Add Plant</button>
       </form>
