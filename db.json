@@ -37,10 +37,10 @@
       "price": 25.99
     },
     {
-      "id": 7,
-      "name": "Fiddle Leaf Fig",
-      "image": "./images/fiddle-leaf-fig.jpg",
-      "price": 55
+      "name": "Top Ramen",
+      "image": "https://images.heb.com/is/image/HEBGrocery/000133649-1",
+      "price": "8.14",
+      "id": 7
     }
   ]
 }
