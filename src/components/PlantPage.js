@@ -30,12 +30,23 @@ function PlantPage() {
       .then(newPlant => setPlants([...plants, newPlant]))
     }
   
+    function handleDeletePlant(plantId) {
+      fetch(`http://localhost:6001/plants/${plantId}`, {
+        method: "DELETE",
+        headers: {
+          "content-type" : "application/json"
+        }
+      })
+      const filteredPlants = plants.filter(plant => 
+        plant.id !== plantId)
+      setPlants(filteredPlants)
+    }
 
   return (
     <main>
       <NewPlantForm handleNewPlant={handleNewPlant} />
       <Search setSearch={setSearch} />
-      <PlantList plants={filteredPlants} />
+      <PlantList plants={filteredPlants} handleDeletePlant={handleDeletePlant} />
     </main>
   );
 }

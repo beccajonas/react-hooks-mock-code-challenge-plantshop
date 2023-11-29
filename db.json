@@ -25,12 +25,6 @@
       "price": 12.11
     },
     {
-      "id": 5,
-      "name": "Jade",
-      "image": "./images/jade.jpg",
-      "price": 10.37
-    },
-    {
       "id": 6,
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
@@ -41,12 +35,6 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
-    },
-    {
-      "name": "Monster",
-      "image": "https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-monstera__0614197_pe686822_s5.jpg",
-      "price": "33",
-      "id": 8
     }
   ]
 }
