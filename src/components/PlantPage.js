@@ -3,10 +3,15 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
+function PlantPage({}) {
 
   const [ plants, setPlants ] = useState([])
   const [ search, setSearch ] = useState("")
+  const [formData, setFormData] = useState({
+    name: "",
+    image: "",
+    price: ""
+  })
 
   useEffect(() => {
     fetch('http://localhost:6001/plants')
@@ -42,11 +47,16 @@ function PlantPage() {
       setPlants(filteredPlants)
     }
 
+    console.log(formData);
+
   return (
     <main>
       <NewPlantForm handleNewPlant={handleNewPlant} />
       <Search setSearch={setSearch} />
-      <PlantList plants={filteredPlants} handleDeletePlant={handleDeletePlant} />
+      <PlantList 
+      plants={filteredPlants} 
+      handleDeletePlant={handleDeletePlant} 
+      setFormData={setFormData} />
     </main>
   );
 }

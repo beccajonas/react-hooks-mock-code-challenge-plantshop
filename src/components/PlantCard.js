@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plants, handleDeletePlant }) {
+function PlantCard({ plants, handleDeletePlant, setFormData}) {
   const [inStock , setInStock] = useState(true)
   
   const { name, image, price } = plants
@@ -13,6 +13,17 @@ function PlantCard({ plants, handleDeletePlant }) {
     handleDeletePlant(plants.id);
   }
 
+  function handleEditClick() {
+    const plantToEdit = {
+      name: plants.name,
+      image: plants.image,
+      price: plants.price
+    }
+
+    setFormData(plantToEdit);
+  }
+
+
   return (
     <li className="card">
       <img src={image} alt={name} />
@@ -24,6 +35,7 @@ function PlantCard({ plants, handleDeletePlant }) {
         <button onClick={handleClick}>Out of Stock</button>
       )}
       <button onClick={handleDeleteClick}>Delete ❌</button>
+      <button onClick={handleEditClick}></button>
     </li>
   );
 }
